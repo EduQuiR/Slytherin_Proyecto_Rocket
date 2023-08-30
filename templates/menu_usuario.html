@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDROCKET</title>
+    <link rel="icon" href="./static/imagenes/logo_ico.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            background-image: url(./static/imagenes/fondo.jpeg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        
+    </style>
+</head>
+<!-- body, es donde va todo lo que nosotros queremos que se muestre en la pagina -->
+<body>
+    <!-- header, representa un contenedor para contenido introductorio o un conjunto de enlaces de navegacion -->
+    <header>
+        <!-- nav, representa una seccion de una pagina cuyo proposito es proporcionar enlaces de navegacion -->
+        <nav class="bg-black text-white flex justify-around items-stretch py-8">
+            <!-- <img src="./static/imagenes/fondo.jpeg" alt="."> -->
+            <!-- div, representa un contenedor generico. funciona como una cajita donde podes poner otros elementos -->
+            <div class="h-20 w-20 items-center">
+                <!-- a, representa un hiper vinvulo, colocamos la ruta en el atributo href y entre comillas -->
+                <a href=LogoEmpresa> </a>
+                <img class="h-75 w-175" src="./static/imagenes/BackgroundEraser_20230828_142256122.png" alt="">
+            </div>
+            <!-- ul, es una lista no ordenada -->
+            <div>
+                <ul class="flex  justify-around bg-black w-96">
+                    <!-- li, sin los elementos de la lista -->
+                    <div class="bg-green-600 hover:bg-green-900 text-white font-bold py-6 px-10 text-2xl rounded-full">
+                        <li><a href= "/"> Inicio</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- main, permite definir el contenido principal de mi pagina -->
+    <main>
+        <!-- section, permite dividir en secciones especificas en el contenido principal -->
+        <section>
+
+            <form method="post">
+                <div class="flex">
+                    <!-- <button class="flex items-center justify-center h-80 mx-auto bg-red-600 hover:bg-red-700 text-black font-bold  rounded-full">Emergencia</button> -->
+                    <button class="items-center justify-center mx-auto text-white h-60 mt-14 py-6 px-12 rounded-full text-3xl bg-red-600 hover:bg-red-700"> Emergencia</button>
+                </div>
+                <div>
+                    <button class="font-bold text-white ml-20 h-20 mt-14 py-6 px-10 rounded-full text-2xl bg-green-800 hover:bg-green-700"><a href="/registro_contacto">Agregar Contacto</a></button>
+                </div>
+                <div>
+                    <button class=" font-bold text-white ml-20 h-20 mt-14 py-6 px-10 rounded-full text-2xl bg-green-800 hover:bg-green-700"><a href="/listado_contactos">Ver contactos</a></button>
+                </div>
+
+   
+            </form>
+        </section>
+    </main>
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCKET</title>
+    <link rel="icon" href="./static/imagenes/logo_ico.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<!--body, es donde va todo lo que nosotros queremos que se muestre en la pagina-->
+<body>
+    <!--header, representa un contenedor para contenido introductorio o un conjunto de enlace de navegacion-->
+    <header>
+        <!--nav, respresenta una seccion de una pagina cuyo proposito es porpocionar enlaces de navegacion-->
+        <nav class="bg-black text-white flex justify-around items-center py-3">
+            <!--div, representa un contenedor generico. Funciona como una caja en la que puedes poner otros elementos-->
+            <div>
+                <!--a, reprenta in hipervinculo, colocamos la ruta en el atributo href y entre comillas-->
+                <img class="object-left-top object-scale-down h-24 w-32" src="https://cdn.discordapp.com/attachments/1144701502242435164/1146098731909910578/BackgroundEraser_20230828_142256122.png" alt="mapache">
+            </div>
+            <!--ul, representa una lista no ordenada-->
+            <ul class="flex justify-between w-52 ">
+                <!--li, representa un elemento de la lista-->
+                <div class="bg-green-600 hover:bg-green-900 text-white font-bold py-6 px-10 text-2xl rounded-full">
+                 <li><a href="/menu_usuario">Volver</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex justify-center items-center h-screen bg-green-600">
+        <section class="mt-[-200px]">
+            <div class="mb-8 text-3xl font-bold flex justify-center items-center text-white">
+                <p> Mis Contactos </p>
+            </div>
+            
+              {% for contacto in lista_contactos %}
+
+            <div class="flex p-[40px] w-auto h-5/7 border-none border-2 bg-green-900 divide-dotted rounded-lg"> 
+              <div class="text-white">
+                <td>nombre: {{contacto.nombre}}</td><br>
+                <td>apellido: {{contacto.apellido}}</td><br>
+                <td>telefono: {{contacto.telefono}}</td><br>
+                <td>correo: {{contacto.e_mail}}</td>
+              </div>
+              
+              <ul class="flex justify-center items-center ">
+                        
+                <form class="bg-green-600 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full mt-6" action="{{ url_for('actualizar_contactos', contacto_id=contacto.id) }}" method="get">
+                    <input type="submit" value="Actualizar">
+                </form>
+             </ul>
+
+                <ul class="flex justify-center items-center ">
+
+                        <form class="bg-green-600 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full mt-6" action="/eliminar_contacto" method="post">
+                            <input type="hidden" name="contacto_id" value="{{contacto.id}}">
+                            <input type="submit" value="Eliminar">
+                        </form>      
+
+                </ul> 
+            </div>
+                    
+                {% endfor %}
+
+
+        </section>
+    </main>
+</body>
+</html>

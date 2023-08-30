@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCKET</title>
+    <link rel="icon" href="./static/imagenes/logo_ico.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<!--body, es donde va todo lo que nosotros queremos que se muestre en la pagina-->
+<body>
+    <!--header, representa un contenedor para contenido introductorio o un conjunto de enlace de navegacion-->
+    <header>
+        <!--nav, respresenta una seccion de una pagina cuyo proposito es porpocionar enlaces de navegacion-->
+        <nav class="bg-black text-white flex justify-around items-center py-3">
+            <!--div, representa un contenedor generico. Funciona como una caja en la que puedes poner otros elementos-->
+            <div>
+                <!--a, reprenta in hipervinculo, colocamos la ruta en el atributo href y entre comillas-->
+                <img class="object-left-top object-scale-down h-24 w-32" src="https://cdn.discordapp.com/attachments/1144701502242435164/1146098731909910578/BackgroundEraser_20230828_142256122.png" alt="mapache">
+            </div>
+            <!--ul, representa una lista no ordenada-->
+            <ul class="flex justify-between w-52 ">
+                <!--li, representa un elemento de la lista-->
+                <div class="bg-green-600 hover:bg-green-900 text-white font-bold py-6 px-10 text-2xl rounded-full">
+                 <button><a href="/index">Inicio</a></button>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      <section class="flex justify-center items-center h-screen bg-green-600">
+          <form method="post"class="p-[35px] w-auto h-5/7 border-none border-2 bg-green-900 divide-dotted rounded-lg">
+            <div class=" text-3xl font-bold mb-2 text-white">
+              <p> Registro de Usuario </p>
+            </div>
+            <div class="text-white">
+              <label for="nombre">Nombre:</label>
+              <!--label, representa una descripcion para un elemento-->
+              <input type="text" maxlength="10" name="nombre" id="nombre"class="border  border rounded-lg focus:ring-blue-400 focus:border-gray-600 block w-full p-2.5 bg-gray-200 border-gray-400 placeholder-gray-200 focus:ring-blue-500 text-black"/>
+              <!--input, representa un campo donde el usuario puede ingresar datos-->
+            </div>
+
+            <div class="text-white">
+              <label for="apellido">Apellido:</label>
+              <input type="text" name="apellido" id="apellido"class="border border rounded-lg text-black focus:ring-blue-400 focus:border-gray-600 block w-full p-2.5 bg-gray-200 border-gray-400 placeholder-gray-200 focus:ring-blue-500">
+            </div>
+            
+            <div class="text-white">
+              <label for="cedula">Cedula de identidad:</label>
+              <input type="text" name="cedula" id="cedula"class="border border rounded-lg focus:ring-blue-400 focus:border-gray-600 block w-full p-2.5 bg-gray-200 border-gray-400 placeholder-gray-200 focus:ring-blue-500 text-black">
+            </div>
+
+            <div class="text-white">
+              <label for="numero">numero Celular:</label>
+              <input type="text" name="numero" id="numero"class="border rounded-lg focus:ring-blue-400 focus:border-gray-600 block w-full p-2.5 bg-gray-200 border-gray-400 placeholder-gray-200 focus:ring-blue-500 text-black">
+            </div>
+
+            <div class="text-white">
+              <label for="mail">Correo Electronico:</label>
+              <input type="mail" name="mail" id="mail"class="border rounded-lg text-black focus:ring-blue-400 focus:border-gray-600 block w-full p-2.5 bg-gray-200 border-gray-400 placeholder-gray-200 focus:ring-blue-500">
+            </div>
+            
+            <div class="text-white">
+              <label for="direccion">Direccion:</label>
+              <!--textarea, usando para escribir texto en varias lineas-->
+              <input type="text" name="direccion" id="direccion"class="border rounded-lg focus:ring-blue-400 focus:border-gray-600 block w-full p-2.5 bg-gray-200 border-gray-400 placeholder-gray-200 focus:ring-blue-500 text-black">
+            </div>
+
+            <div class="flex justify-center items-center bg-green-600 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full mt-6 ">
+              <input type="submit" value="Cargar">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

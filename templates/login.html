@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCKET</title>
+    <link rel="icon" href="./static/imagenes/logo_ico.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<!--body, es donde va todo lo que nosotros queremos que se muestre en la pagina-->
+<body>
+    <!--header, representa un contenedor para contenido introductorio o un conjunto de enlace de navegacion-->
+    <header>
+        <!--nav, respresenta una seccion de una pagina cuyo proposito es porpocionar enlaces de navegacion-->
+        <nav class="bg-black text-white flex justify-around items-center py-3">
+            <!--div, representa un contenedor generico. Funciona como una caja en la que puedes poner otros elementos-->
+            <div>
+                <!--a, reprenta in hipervinculo, colocamos la ruta en el atributo href y entre comillas-->
+                <img class="object-left-top object-scale-down h-24 w-32" src="https://cdn.discordapp.com/attachments/1144701502242435164/1146098731909910578/BackgroundEraser_20230828_142256122.png" alt="mapache">
+            </div>
+            <!--ul, representa una lista no ordenada-->
+            <ul class="flex justify-between w-52 ">
+                <!--li, representa un elemento de la lista-->
+                <div class="bg-green-600 hover:bg-green-700 text-2xl text-white font-bold py-6 px-10 rounded-full">
+                  <button><a href="/">Atras</a></button>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="flex justify-center items-center h-screen bg-green-600">
+            <form action="esto es para nuestros compis del bakc, donde iria la ruta en donde se estarianprocesando la info de nuestro from"method="aqui va el metodo de envio (post)" class="p-[40px] w-auto h-6/5 border-none border-2 bg-green-900 divide-dotted rounded-lg">              
+              <h1 class="text-white text-5xl h-20 font-bold mb-2">Inicio de sesion:</h1>
+              <div>
+                <label for="email" class="text-white">Correo Electronico:</label>
+                <input type="email" name="email" id="email"class="border rounded-lg focus:ring-blue-400 focus:border-gray-600 block w-full p-2.5 bg-gray-200 border-gray-400 placeholder-gray-200 focus:ring-blue-500">
+              </div>
+              
+              <div>
+                <label for="contraseña" class="text-white">Contraseña</label>
+                <input type="text" name="contraseña" id="contraseña" class="border rounded-lg focus:ring-blue-400 focus:border-gray-600 block w-full p-2.5 bg-gray-200 border-gray-400 placeholder-gray-200 focus:ring-blue-500">
+              </div>
+              <div class="h-20 flex justify-between items-center">
+                  <button type="submit"class="bg-green-600 hover:bg-green-700 text-2xl text-white text-center font-bold py-3 px-5 rounded-full"><a href="/menu_usuario">Ingresar</a></button>
+              </div>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>

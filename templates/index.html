@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCKET</title>
+    <link rel="icon" href="./static/imagenes/logo_ico.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            background-image: url(./static/imagenes/fondo.jpeg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        /* stilos de carrucel */
+        html,
+        body {
+        position: relative;
+        height: 100%;
+        }
+
+        /* body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        } */
+
+        swiper-container {
+        width: 50%;
+        height: 50%;
+        }
+
+        swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+
+        .autoplay-progress {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--swiper-theme-color);
+        }
+
+        .autoplay-progress svg {
+        --progress: 0;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        stroke-width: 4px;
+        stroke: var(--swiper-theme-color);
+        fill: none;
+        stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+        stroke-dasharray: 125.6;
+        transform: rotate(-90deg);
+        }
+    </style>
+</head>
+<!-- body, es donde va todo lo que nosotros queremos que se muestre en la pagina -->
+<body>
+    <!-- header, representa un contenedor para contenido introductorio o un conjunto de enlaces de navegacion -->
+    <header>
+        <!-- nav, representa una seccion de una pagina cuyo proposito es proporcionar enlaces de navegacion -->
+        <nav class="bg-black-600 text-white flex justify-around items-stretch py-8">
+            <!-- <img src="./static/imagenes/fondo.jpeg" alt="."> -->
+            <!-- div, representa un contenedor generico. funciona como una cajita donde podes poner otros elementos -->
+            <div class="h-20 w-20 items-center">
+                <!-- a, representa un hiper vinvulo, colocamos la ruta en el atributo href y entre comillas -->
+                <a href=LogoEmpresa> </a>
+                <img class="h-75 w-175" src="./static/imagenes/BackgroundEraser_20230828_142256122.png" alt="">
+            </div>
+            <!-- ul, es una lista no ordenada -->
+            <div>
+                <ul class="flex  justify-around bg-black-600 w-96">
+                    <!-- li, sin los elementos de la lista -->
+                    <div class="bg-black hover:bg-green-800 text-white font-bold py-6 px-10 text-2xl rounded-full">
+                        <li><a href= "/login"> Inicio</a></li>
+                    </div>
+                    <div class="bg-black hover:bg-green-800 text-white font-bold py-6 px-10 text-2xl rounded-full"> 
+                        
+                        <li><a href="/registro_usuario">Registro</a></li>
+                    </div>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- main, permite definir el contenido principal de mi pagina -->
+    <main>
+        <!-- section, permite dividir en secciones especificas en el contenido principal -->
+        <section>
+
+            <form  action="esto es para que los compañeros del back, donde iria la ruta en donde se estarian procesando los datos de nuestro formulario"method="aqui va el metodo (post)">
+                
+                <div class="flex items-center justify-center h-80 mx-auto">
+                    <input class="p-4 border-green rounded-full text-2xl" type="search" placeholder="Buscar..." size="90" >
+                    <button></button>
+                    <!-- <button class="rounded-lg bg-black text-white" type="submit">Buscar</button> -->
+                </div>
+                <div>
+                    <!-- <img class=" w-auto h-44 my-6.5 " src="./static/imagenes/Banner_Web.jpg" alt="Cargando"> -->
+                </div>
+   
+            </form>
+            <!-- Swiper -->
+            <swiper-container class="mt-32 mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+            centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+            <swiper-slide><img class="object-contain h-74 w-74" src="./static/imagenes/foto1.jpg" alt="Image"></swiper-slide>
+            <swiper-slide><img class="object-contain h-74 w-74" src="./static/imagenes/foto2.jpg" alt="Image"></swiper-slide>
+            <swiper-slide><img class="object-contain h-74 w-74" src="./static/imagenes/foto3.jpg" alt="Image"></swiper-slide>
+            <swiper-slide><img class="object-contain h-74 w-74" src="./static/imagenes/foto4.jpg" alt="Image"></swipeh-64 w-64r-slide>
+            <div class="autoplay-progress" slot="container-end">
+                <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
+            </div>
+            </swiper-container>
+
+            <!-- Swiper JS -->
+            
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        const progressCircle = document.querySelector(".autoplay-progress svg");
+        const progressContent = document.querySelector(".autoplay-progress span");
+
+        const swiperEl = document.querySelector("swiper-container");
+        swiperEl.addEventListener("autoplaytimeleft", (e) => {
+        const [swiper, time, progress] = e.detail;
+        progressCircle.style.setProperty("--progress", 1 - progress);
+        progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+        });
+    </script>
+
+
+</body>
+</html>
