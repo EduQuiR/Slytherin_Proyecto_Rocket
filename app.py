@@ -7,10 +7,10 @@ import requests
 import json
 from twilio.rest import Client
 
-TWILIO_ACCOUNT_SID = "AC561e7b2e64eac0842451d045093dfd0f"  # ID de cuenta de Twilio
-TWILIO_AUTH_TOKEN = "1fb4712892acbe0e0083b2fdc77539bc"  # Token de autenticación de Twilio
-TWILIO_PHONE_NUMBER = "+18147524286"  # Número de teléfono de Twilio
-RECIPIENT_PHONE_NUMBER = "+595983215213"  # Número del destinatario
+TWILIO_ACCOUNT_SID = ""  # ID de cuenta de Twilio
+TWILIO_AUTH_TOKEN = ""  # Token de autenticación de Twilio
+TWILIO_PHONE_NUMBER = ""  # Número de teléfono de Twilio
+RECIPIENT_PHONE_NUMBER = ""  # Número del destinatario
 
 def get_location():
     ip = requests.get("https://api.ipify.org").text
